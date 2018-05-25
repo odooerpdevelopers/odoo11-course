@@ -1,3 +1,4 @@
-Odoo 11 for Developers Course <oed>===================================
+Odoo 11 for Developers Course
+=============================
 
-	Source code used in tutorials.
+Source code used in tutorials.

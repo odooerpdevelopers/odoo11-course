@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="library_book_form_view_inherit" model="ir.ui.view">
+            <field name="name">library.book.form.inherit</field>
+            <field name="model">library.book</field>
+            <field name="inherit_id" ref="library.library_book_form_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="date"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

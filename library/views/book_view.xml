@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!--Form view-->
+    <record id="library_book_form_view" model="ir.ui.view">
+        <field name="name">library.book.form.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Form Book">
+                <sheet>
+                    <field name="image" widget="image"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="pages"/>
+                        <field name="isbn"/>
+                        <field name="category_id"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree view-->
+    <record id="library_book_tree_view" model="ir.ui.view">
+        <field name="name">library.book.tree.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree string="Tree Book">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="isbn"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action book-->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Book</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="library_menu_root" name="Library" sequence="1"/>
+    <menuitem id="library_book_menu_category" name="Book" sequence="1" parent="library_menu_root"/>
+    <menuitem id="action_library_book_menu" name="Book" sequence="1" parent="library_book_menu_category" action="action_library_book"/>
+</odoo>
