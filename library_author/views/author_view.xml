@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View book, add author_id -->
+        <record id="library_book_form_view_author" model="ir.ui.view">
+            <field name="name">library.book.form.author</field>
+            <field name="model">library.book</field>
+            <field name="inherit_id" ref="library.library_book_form_view"/>
+            <field name="arch" type="xml">
+                <field name="isbn" position="after">
+                    <field name="author_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
