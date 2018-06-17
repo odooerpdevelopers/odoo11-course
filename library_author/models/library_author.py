@@ -10,3 +10,5 @@ class LibraryAuthor(models.Model):
     active = fields.Boolean(string="Is Active?", default=True)
     country_id = fields.Many2one("res.country")
 
+    book_ids = fields.Many2many("library.book", string="Books")
+

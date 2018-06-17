@@ -11,5 +11,52 @@
                 </field>
             </field>
         </record>
+
+        <!--Author form view-->
+        <record id="author_form_view" model="ir.ui.view">
+            <field name="name">author.form.view</field>
+            <field name="model">library.author</field>
+            <field name="arch" type="xml">
+                <form string="authorForm">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="country_id"/>
+                        </group>
+                        <group>
+                            <field name="book_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--author tree view-->
+        <record id="author_tree_view" model="ir.ui.view">
+            <field name="name">author.tree.view</field>
+            <field name="model">library.author</field>
+            <field name="arch" type="xml">
+                <form string="authorTree">
+                    <tree>
+                        <field name="name"/>
+                        <field name="active"/>
+                    </tree>
+                </form>
+            </field>
+        </record>
+
+        <!--action author-->
+        <record id="action_author_tree_view" model="ir.actions.act_window">
+            <field name="name">Author</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.author</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menus-->
+        <menuitem id="library_author_menu_category" name="Authors" sequence="1" parent="library.library_menu_root"/>
+        <menuitem id="action_library_author_menu" name="Author" sequence="1" parent="library_author_menu_category"
+                  action="action_author_tree_view"/>
     </data>
 </odoo>
