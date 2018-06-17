@@ -12,6 +12,19 @@
             </field>
         </record>
 
+        <!--search view book by author-->
+        <record id="library_book_search_view" model="ir.ui.view">
+            <field name="name">library.search.view</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <search string="Book Search view">
+                    <field name="name" string="Name"/>
+                    <field name="author_id" string="Author"/>
+                    <field name="isbn" string="ISBN"/>
+                </search>
+            </field>
+        </record>
+
         <!--Author form view-->
         <record id="author_form_view" model="ir.ui.view">
             <field name="name">author.form.view</field>
