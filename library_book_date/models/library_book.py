@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 
 class LibraryBook(models.Model):
@@ -8,3 +8,10 @@ class LibraryBook(models.Model):
 
     date = fields.Date(string="Release Date")
 
+    @api.onchange('date')
+    def onchange_date(self):
+        today = fields.Date.today()
+        if self.date and self.date > today:
+            raise exceptions.UserError(
+                "Date should be less than today!!!"
+            )
