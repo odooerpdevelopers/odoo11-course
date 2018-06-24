@@ -7,7 +7,7 @@ class LibraryBook(models.Model):
     _name = "library.book"
 
     name = fields.Char(string="Name")
-    active = fields.Boolean("Is active")
+    active = fields.Boolean("Is active", default=True)
     image = fields.Binary()
     pages = fields.Integer(string="# Pages")
     isbn = fields.Char(string="ISBN", size=13)
