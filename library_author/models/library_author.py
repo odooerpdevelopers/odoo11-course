@@ -11,3 +11,14 @@ class LibraryAuthor(models.Model):
     country_id = fields.Many2one("res.country")
 
     book_ids = fields.One2many("library.book", "author_id", string="Books")
+
+    total_books = fields.Integer(
+        compute="_get_total_books",
+        string="Total Books",
+        readonly=True,
+    )
+
+    def _get_total_books(self):
+        for record in self:
+            if record.book_ids:
+                record.total_books = len(record.book_ids)

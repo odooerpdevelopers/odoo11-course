@@ -36,6 +36,8 @@
                             <field name="name"/>
                             <field name="active"/>
                             <field name="country_id"/>
+                            <field name="total_books"/>
+
                         </group>
                         <group>
                             <field name="book_ids"/>
