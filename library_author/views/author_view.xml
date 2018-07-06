@@ -52,12 +52,12 @@
             <field name="name">author.tree.view</field>
             <field name="model">library.author</field>
             <field name="arch" type="xml">
-                <form string="authorTree">
-                    <tree>
-                        <field name="name"/>
-                        <field name="active"/>
-                    </tree>
-                </form>
+                <tree decoration-danger="total_books &lt; 1" decoration-info="total_books &gt;= 1">
+                    <field name="name"/>
+                    <field name="total_books"/>
+                    <field name="country_id"/>
+                    <field name="active"/>
+                </tree>
             </field>
         </record>
 
