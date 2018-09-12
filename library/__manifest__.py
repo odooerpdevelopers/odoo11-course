@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         "views/book_view.xml",
+        "data/books.xml",
     ],
     'application': True,
 }
