@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--form wizard view-->
+        <record id="library_assign_author_form" model="ir.ui.view">
+            <field name="name">library.assign.author.form</field>
+            <field name="model">library.assign.author</field>
+            <field name="arch" type="xml">
+                <form string="Wizard Form">
+                    <sheet>
+                        <group>
+                            <field name="author_id"/>
+                        </group>
+                        <group>
+                            <field name="active_book_ids"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string='Assign' name="assign_author" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            name="Assign Book Author"
+            res_model="library.assign.author"
+            src_model="library.book"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_wizard_assign_authors" />
+
+    </data>
+</odoo>

@@ -23,7 +23,10 @@
     'depends': ['library'],
 
     # always loaded
-    'data': ["views/author_view.xml"],
+    'data': [
+        "views/author_view.xml",
+        "wizard/assign_author_view.xml",
+    ],
     # only loaded in demonstration mode
     'application': True,
 

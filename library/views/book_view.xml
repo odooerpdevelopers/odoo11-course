@@ -33,6 +33,7 @@
                 <field name="name"/>
                 <field name="active"/>
                 <field name="isbn"/>
+                <field name="create_uid"/>
             </tree>
         </field>
     </record>
