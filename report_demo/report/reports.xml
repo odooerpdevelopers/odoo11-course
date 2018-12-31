@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+     <report
+            id="account_invoice_demo"
+            model="account.invoice"
+            string="Invoice Demo"
+            report_type="qweb-pdf"
+            name="report_demo.invoice_demo"
+            file="report_demo.invoice_demo"
+            attachment="(object.state in ('open','in_payment','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+            paperformat="paperformat_invoice_demo"
+        />
 </odoo>

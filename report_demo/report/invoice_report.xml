@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice_demo_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2><span t-field="o.partner_id"/></h2>
+                <h3>
+                    My data:
+                </h3>
+                <ul t-foreach="mydata" t-as="val">
+                    <li><t t-esc="val"/></li>
+                </ul>
+            </div>
+        </t>
+
+    </template>
+
+    <template id="invoice_demo">
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.user_id.lang if o.type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="report_demo.invoice_demo_document" t-lang="lang"/>
+                </t>
+            </t>
+
+    </template>
+
+</odoo>
